@@ -1,0 +1,493 @@
+{
+	"info": {
+		"_postman_id": "8fd51988-4b99-4189-8d03-3a470adfd3e4",
+		"name": "ProDanceHalls",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50827858",
+		"_collection_link": "https://vpohodilova-8240081.postman.co/workspace/Vika's-Workspace~dc476635-e0ab-4868-8e1d-5bbafed8d060/collection/50827858-8fd51988-4b99-4189-8d03-3a470adfd3e4?action=share&source=collection_link&creator=50827858"
+	},
+	"item": [
+		{
+			"name": "Регистрация пользователя",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"first_name\": \"Владимир\",\r\n\"last_name\": \"Петров\",\r\n\"phone\": \"8900120000\",\r\n\"login\": \"vlad\",\r\n\"password\": \"123456\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://k-pohodilova.сделай.site/api/register",
+					"protocol": "http",
+					"host": [
+						"k-pohodilova",
+						"сделай",
+						"site"
+					],
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Авторизация пользователя",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"login\": \"vlad\",\r\n\"password\": \"123456\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://k-pohodilova.сделай.site/api/login",
+					"protocol": "http",
+					"host": [
+						"k-pohodilova",
+						"сделай",
+						"site"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "загрузка аватара",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo4LCJsb2dpbiI6InZsYWQiLCJyb2xlIjoidXNlciIsImV4cCI6MTc2NjYwMTg0Mn0.2s-2KZH9UJqs7FELBBMEqPJcI3Cpn3Hqq7MuFkLwn00",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo4LCJsb2dpbiI6InZsYWQiLCJyb2xlIjoidXNlciIsImV4cCI6MTc2NjYwMTg0Mn0.2s-2KZH9UJqs7FELBBMEqPJcI3Cpn3Hqq7MuFkLwn00",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "multipart/form-data",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "postman-cloud:///1f0db78e-a0e2-4780-a23d-ce009764d454"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://k-pohodilova.сделай.site/api/profile/avatar",
+					"protocol": "http",
+					"host": [
+						"k-pohodilova",
+						"сделай",
+						"site"
+					],
+					"path": [
+						"api",
+						"profile",
+						"avatar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "список залов",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"login\": \"vlad\",\r\n\"password\": \"123456\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://k-pohodilova.сделай.site/api/halls",
+					"protocol": "http",
+					"host": [
+						"k-pohodilova",
+						"сделай",
+						"site"
+					],
+					"path": [
+						"api",
+						"halls"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "информация о зале",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"login\": \"vlad\",\r\n\"password\": \"123456\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://k-pohodilova.сделай.site/api/halls/1",
+					"protocol": "http",
+					"host": [
+						"k-pohodilova",
+						"сделай",
+						"site"
+					],
+					"path": [
+						"api",
+						"halls",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "создать бронирование",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo4LCJsb2dpbiI6InZsYWQiLCJyb2xlIjoidXNlciIsImV4cCI6MTc2NjYwMjUwM30.aKnxJiwfDSd9hcoz9TLuxgbzCp1gAFu3RDkoG2uN8Jc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo4LCJsb2dpbiI6InZsYWQiLCJyb2xlIjoidXNlciIsImV4cCI6MTc2NjYwMjUwM30.aKnxJiwfDSd9hcoz9TLuxgbzCp1gAFu3RDkoG2uN8Jc",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"hall_id\": 2,\r\n  \"date\": \"2025-10-10\",\r\n  \"time_slot\": \"15:00\",\r\n  \"user_id\": 5\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://k-pohodilova.сделай.site/api/bookings",
+					"protocol": "http",
+					"host": [
+						"k-pohodilova",
+						"сделай",
+						"site"
+					],
+					"path": [
+						"api",
+						"bookings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "отмена бронирования",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo4LCJsb2dpbiI6InZsYWQiLCJyb2xlIjoidXNlciIsImV4cCI6MTc2NjYwMjUwM30.aKnxJiwfDSd9hcoz9TLuxgbzCp1gAFu3RDkoG2uN8Jc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://k-pohodilova.сделай.site/api/bookings/8",
+					"protocol": "http",
+					"host": [
+						"k-pohodilova",
+						"сделай",
+						"site"
+					],
+					"path": [
+						"api",
+						"bookings",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "изменить бронирование",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo4LCJsb2dpbiI6InZsYWQiLCJyb2xlIjoidXNlciIsImV4cCI6MTc2NjYwMjUwM30.aKnxJiwfDSd9hcoz9TLuxgbzCp1gAFu3RDkoG2uN8Jc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"date\": \"2025-11-11\",\r\n  \"time\": \"14:00\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://k-pohodilova.сделай.site/api/bookings/9",
+					"protocol": "http",
+					"host": [
+						"k-pohodilova",
+						"сделай",
+						"site"
+					],
+					"path": [
+						"api",
+						"bookings",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "подтверждение бронирования админом",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJsb2dpbiI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzY2NjAzMDY4fQ.6WofR89nFi9yecD6Y-K2uHd9YIEnAAcHBeft4YzdCAg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJsb2dpbiI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzY2NjAzMDY4fQ.6WofR89nFi9yecD6Y-K2uHd9YIEnAAcHBeft4YzdCAg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://k-pohodilova.сделай.site/api/admin/bookings/9/approve",
+					"protocol": "http",
+					"host": [
+						"k-pohodilova",
+						"сделай",
+						"site"
+					],
+					"path": [
+						"api",
+						"admin",
+						"bookings",
+						"9",
+						"approve"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "удаление бронирования админом",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJsb2dpbiI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzY2NjAzMDY4fQ.6WofR89nFi9yecD6Y-K2uHd9YIEnAAcHBeft4YzdCAg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJsb2dpbiI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzY2NjAzMDY4fQ.6WofR89nFi9yecD6Y-K2uHd9YIEnAAcHBeft4YzdCAg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://k-pohodilova.сделай.site/api/admin/bookings/9",
+					"protocol": "http",
+					"host": [
+						"k-pohodilova",
+						"сделай",
+						"site"
+					],
+					"path": [
+						"api",
+						"admin",
+						"bookings",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "загрузка фотографии зала",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJsb2dpbiI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzY2NjAzMDY4fQ.6WofR89nFi9yecD6Y-K2uHd9YIEnAAcHBeft4YzdCAg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJsb2dpbiI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzY2NjAzMDY4fQ.6WofR89nFi9yecD6Y-K2uHd9YIEnAAcHBeft4YzdCAg",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "multipart/form-data",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "E9RuI-33T/zal.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://k-pohodilova.сделай.site/api/halls/4/photo",
+					"protocol": "http",
+					"host": [
+						"k-pohodilova",
+						"сделай",
+						"site"
+					],
+					"path": [
+						"api",
+						"halls",
+						"4",
+						"photo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "просмотр профиля",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo4LCJsb2dpbiI6InZsYWQiLCJyb2xlIjoidXNlciIsImV4cCI6MTc2NjYwMTAwMX0.JDz-crboVMl9vmbTbS6HcpYlStmzgOpxQbuTZKzARHA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo4LCJsb2dpbiI6InZsYWQiLCJyb2xlIjoidXNlciIsImV4cCI6MTc2NjYwMTAwMX0.JDz-crboVMl9vmbTbS6HcpYlStmzgOpxQbuTZKzARHA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://k-pohodilova.сделай.site/api/profile",
+					"protocol": "http",
+					"host": [
+						"k-pohodilova",
+						"сделай",
+						"site"
+					],
+					"path": [
+						"api",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
